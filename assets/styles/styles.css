@@ -10,19 +10,21 @@ body{
 
 main{
     padding: 20px;
-    overflow: auto;
+    display: flex;
+
+    gap: 1.5rem;
 }
 
 #content{
-    float: left;
-    width: 75%;
+    flex: 5;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
 }
 
 aside{
-    float: right;
-    width: 25%;
-    padding-left: 20px;
-}
+    flex: 1;
+}    
 
 h2, h3{
     color: #00a2c6;
@@ -32,15 +34,16 @@ nav a{
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    padding: 10px;
     color: white;
-}
+}    
 
 nav a:hover {
     font-weight: bold;
 }
 
-.profile header {
-    text-align: center;
+nav ul {
+    padding: inline;
 }
 
 .featured-image{
@@ -58,7 +61,7 @@ nav a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
-    margin-top: 40px;
+    
 }
 
 .jumbotron{
@@ -69,15 +72,23 @@ nav a:hover {
     color: white;
 }
 
+nav ul{
+padding: inline;
+display: flex;
+
+gap: 2rem;
+
+}
 nav li {
-    display: inline;
     list-style-type: none;
-    margin-right: 20px;
+    
 }
 
 nav{
     background-color: #00a2c6;
     padding: 5px;
+    position: sticky;
+    top: 0;
 }
 
 footer{
@@ -86,4 +97,12 @@ footer{
     background-color: #00a2c6;
     text-align: center;
     font-weight: bold;
+}
+
+@media  screen and (max-width: 1000px) {
+ #content,
+ aside {
+  width: 100%;
+  padding: 0;    
+}
 }
